@@ -23,7 +23,7 @@ function AnimatedPage({ children }) {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="grow m-6 p-8 flex justify-center items-center text-lg relative z-0 before:-z-10 before:content-[''] before:w-28 before:h-28 before:absolute before:left-0 before:top-0 before:rounded-sm before:border-t-2 before:border-l-2
+            className="grow m-6 p-8 flex text-lg relative z-0 before:-z-10 before:content-[''] before:w-28 before:h-28 before:absolute before:left-0 before:top-0 before:rounded-sm before:border-t-2 before:border-l-2
             after:-z-10 after:content-[''] after:w-[calc(100%-7rem)] after:h-[calc(100%-7rem)] after:absolute after:bottom-0 after:right-0 after:border-b-2 after:border-r-2 after:rounded-sm"
         >
             {children}
