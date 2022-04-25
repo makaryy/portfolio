@@ -9,8 +9,8 @@ function Nav() {
                 <NavLink to="/">
                     <NavButton pathname="/">HEADER</NavButton>
                 </NavLink>
-                <NavLink to="/first">
-                    <NavButton pathname="/first">FIRST</NavButton>
+                <NavLink to="/about">
+                    <NavButton pathname="/about">ABOUT</NavButton>
                 </NavLink>
                 <NavLink to="/second">
                     <NavButton pathname="/second">SECOND</NavButton>
