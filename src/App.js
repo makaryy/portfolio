@@ -2,7 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import { Routes, Route, useLocation } from "react-router-dom";
 import About from "./components/About";
 import Container from "./components/Container";
-import Form from "./components/Form";
+import Contact from "./components/Contact";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Projects from "./components/Projects";
@@ -18,7 +18,7 @@ function App() {
                         <Route path="/" element={<Header />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/projects" element={<Projects />} />
-                        <Route path="/contact" element={<Form />} />
+                        <Route path="/contact" element={<Contact />} />
                     </Routes>
                 </AnimatePresence>
             </Container>
