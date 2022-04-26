@@ -48,9 +48,9 @@ function Projects() {
     return (
         <AnimatedPage>
             <div className="grid xl:grid-cols-3 md:grid-cols-2 md:gap-8 gap-2 mx-auto justify-center items-center">
-                {projects.map((project) => {
+                {projects.map((project, i) => {
                     return (
-                        <a href={project.link} target="_blank" rel="noreferrer" className="h-fit">
+                        <a href={project.link} target="_blank" rel="noreferrer" className="h-fit" key={i}>
                             <Card>
                                 <CardImage src={project.image} alt={project.title} />
                                 <CardContent>

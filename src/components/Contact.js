@@ -47,7 +47,7 @@ function Form() {
                     <input
                         type="email"
                         name="email"
-                        className="m-3 bg-zinc-700 rounded-md h-fit w-full p-3 border border-white focus:bg-zinc-800"
+                        className="m-3 bg-zinc-700 rounded-md h-fit w-full p-3 border border-white focus:bg-zinc-800 text-sm sm:text-lg"
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
                         required
@@ -58,7 +58,7 @@ function Form() {
                     <textarea
                         type="textarea"
                         name="message"
-                        className="m-3 bg-zinc-700 rounded-md h-48 w-full p-3 border border-white focus:bg-zinc-800"
+                        className="m-3 bg-zinc-700 rounded-md h-48 w-full p-3 border border-white focus:bg-zinc-800 text-sm sm:text-lg"
                         onChange={(e) => setMessage(e.target.value)}
                         value={message}
                         rows={8}

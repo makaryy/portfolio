@@ -1,21 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 function NavButton({ children, pathname }) {
     const location = useLocation();
     const [animate, setAnimate] = useState(false);
-    return (
+    const [isSmallScreen, setIsSmallScreen] = useState(window.matchMedia("max-width: 640px").matches);
+
+    useEffect(() => {
+        window.matchMedia("(max-width: 640px)").addEventListener("change", (e) => setIsSmallScreen(e.matches));
+    }, [isSmallScreen]);
+
+    return isSmallScreen ? (
         <button
-            className={`w-32 h-24 m-2 overflow-hidden z-0 relative ${
+            className={`flex items-center justify-center w-full h-16 p-2 shadow-md bg-zinc-900 shadow-zinc-900 ${
+                location.pathname === pathname && "border-b-2 bg-zinc-800"
+            }`}>
+            {children}
+        </button>
+    ) : (
+        <button
+            className={`flex items-center justify-center w-full h-16 p-2 shadow-md bg-zinc-900 shadow-zinc-900 sm:shadow-none sm:bg-zinc-800 sm:w-32 sm:h-24 sm:m-2 overflow-hidden z-0 relative ${
                 animate && "animate-nav-click"
             } ${
                 location.pathname === pathname
-                    ? `before:animate-fade-in border-indigo-400 text-indigo-400 before:content-[''] before:w-[200%] before:h-[200%] before:bg-no-repeat before:bg-rotating-border-image before:bg-rotating-border-size before:bg-rotating-border-position before:bg-rotating-border before:absolute before:-left-1/2 before:-top-1/2 before:-z-20 before:animate-rotate after:absolute after:w-[calc(100%-4px)] after:bg-zinc-800 after:-z-10 after:h-[calc(100%-4px)] after:top-[2px] after:left-[2px]`
-                    : ` hover:translate-x-1 duration-200 hover:text-zinc-400 hover:border-zinc-400 before:hover:border-zinc-400 after:hover:border-zinc-400 before:content-[''] before:w-4 before:h-4 before:absolute before:left-0 before:top-0 before:rounded-sm before:border-t-2 before:border-l-2 after:content-[''] after:w-28 after:h-20 after:absolute after:bottom-0 after:right-0 after:border-b-2 after:border-r-2 after:rounded-sm`
+                    ? `border-b-2  bg-zinc-800 sm:border-0 sm:before:animate-fade-in sm:border-indigo-400 sm:text-indigo-400 sm:before:content-[''] sm:before:w-[200%] sm:before:h-[200%] sm:before:bg-no-repeat sm:before:bg-rotating-border-image sm:before:bg-rotating-border-size sm:before:bg-rotating-border-position sm:before:bg-rotating-border sm:before:absolute sm:before:-left-1/2 sm:before:-top-1/2 sm:before:-z-20 sm:before:animate-rotate sm:after:absolute sm:after:w-[calc(100%-4px)] sm:after:bg-zinc-800 sm:after:-z-10 sm:after:h-[calc(100%-4px)] sm:after:top-[2px] sm:after:left-[2px]`
+                    : ` sm:hover:translate-x-1 sm:duration-200 sm:hover:text-zinc-400 sm:hover:border-zinc-400 sm:before:hover:border-zinc-400 sm:after:hover:border-zinc-400 sm:before:content-[''] sm:before:w-4 before:h-4 sm:before:absolute sm:before:left-0 sm:before:top-0 sm:before:rounded-sm sm:before:border-t-2 sm:before:border-l-2 sm:after:content-[''] sm:after:w-28 sm:after:h-20 sm:after:absolute sm:after:bottom-0 sm:after:right-0 sm:after:border-b-2 sm:after:border-r-2 sm:after:rounded-sm`
             }`}
             onClick={() => setAnimate(true)}
-            onAnimationEnd={() => setAnimate(false)}
-        >
+            onAnimationEnd={() => setAnimate(false)}>
             {children}
         </button>
     );

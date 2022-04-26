@@ -4,22 +4,28 @@ import NavButton from "./NavButton";
 
 function Nav() {
     return (
-        <aside className="h-screen w-fit flex items-center justify-center">
-            <nav className="flex flex-col justify-center items-center">
+        <nav className="w-full sm:w-fit sm:h-screen flex sm:flex-col justify-center items-center">
+            <div className="grow sm:grow-0">
                 <NavLink to="/">
                     <NavButton pathname="/">HEADER</NavButton>
                 </NavLink>
+            </div>
+            <div className="grow sm:grow-0">
                 <NavLink to="/about">
                     <NavButton pathname="/about">ABOUT</NavButton>
                 </NavLink>
+            </div>
+            <div className="grow sm:grow-0">
                 <NavLink to="/projects">
                     <NavButton pathname="/projects">PROJECTS</NavButton>
                 </NavLink>
+            </div>
+            <div className="grow sm:grow-0">
                 <NavLink to="/contact">
                     <NavButton pathname="/contact">CONTACT</NavButton>
                 </NavLink>
-            </nav>
-        </aside>
+            </div>
+        </nav>
     );
 }
 
