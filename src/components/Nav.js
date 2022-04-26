@@ -12,8 +12,8 @@ function Nav() {
                 <NavLink to="/about">
                     <NavButton pathname="/about">ABOUT</NavButton>
                 </NavLink>
-                <NavLink to="/second">
-                    <NavButton pathname="/second">SECOND</NavButton>
+                <NavLink to="/projects">
+                    <NavButton pathname="/projects">PROJECTS</NavButton>
                 </NavLink>
                 <NavLink to="/contact">
                     <NavButton pathname="/contact">CONTACT</NavButton>

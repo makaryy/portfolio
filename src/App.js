@@ -5,7 +5,7 @@ import Container from "./components/Container";
 import Form from "./components/Form";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import Second from "./components/Second";
+import Projects from "./components/Projects";
 
 function App() {
     let location = useLocation();
@@ -17,7 +17,7 @@ function App() {
                     <Routes location={location} key={location.pathname}>
                         <Route path="/" element={<Header />} />
                         <Route path="/about" element={<About />} />
-                        <Route path="/second" element={<Second />} />
+                        <Route path="/projects" element={<Projects />} />
                         <Route path="/contact" element={<Form />} />
                     </Routes>
                 </AnimatePresence>
