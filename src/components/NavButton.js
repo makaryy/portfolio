@@ -20,7 +20,7 @@ function NavButton({ children, pathname }) {
     ) : (
         <button
             className={`flex items-center justify-center w-full h-16 p-2 shadow-md bg-zinc-900 shadow-zinc-900 sm:shadow-none sm:bg-zinc-800 sm:w-32 sm:h-24 sm:m-2 overflow-hidden z-0 relative ${
-                animate && "animate-nav-click"
+                animate && "sm:animate-nav-click animate-nav-click-mobile"
             } ${
                 location.pathname === pathname
                     ? `border-b-2  bg-zinc-800 sm:border-0 sm:before:animate-fade-in sm:border-indigo-400 sm:text-indigo-400 sm:before:content-[''] sm:before:w-[200%] sm:before:h-[200%] sm:before:bg-no-repeat sm:before:bg-rotating-border-image sm:before:bg-rotating-border-size sm:before:bg-rotating-border-position sm:before:bg-rotating-border sm:before:absolute sm:before:-left-1/2 sm:before:-top-1/2 sm:before:-z-20 sm:before:animate-rotate sm:after:absolute sm:after:w-[calc(100%-4px)] sm:after:bg-zinc-800 sm:after:-z-10 sm:after:h-[calc(100%-4px)] sm:after:top-[2px] sm:after:left-[2px]`
