@@ -21,11 +21,11 @@ export const projects = [
         link: "https://chimerical-banoffee-dd6d52.netlify.app/",
     },
     {
-        image: "/cozy-whiff.jpg",
-        title: "Cozy Whiff",
-        description: "Brochure website for handmade candle merchant",
+        image: "/kubawarkocz.jpg",
+        title: "Kuba Warkocz",
+        description: "Brochure website for magician",
         technologies: ["React, Material UI", "React Router"],
-        link: "https://majestic-kataifi-ceb872.netlify.app/",
+        link: "https://kubawarkocz.pl/",
     },
     {
         image: "/portfolio.jpg",

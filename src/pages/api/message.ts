@@ -8,8 +8,6 @@ type Data = {
 import formData from "form-data";
 import Mailgun from "mailgun.js";
 
-const DOMAIN = process.env.MAILGUN_DOMAIN;
-const API_KEY = process.env.MAILGUN_API_KEY;
 const generateHtml = (message: string) => {
     return `
   <html>
@@ -35,12 +33,12 @@ const generateHtml = (message: string) => {
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     if (req.method === "POST") {
         const body = JSON.parse(req.body);
-        if (DOMAIN && API_KEY && body) {
+        if (process.env.MAILGUN_DOMAIN && process.env.MAILGUN_API_KEY && body) {
             try {
                 const mailgun = new Mailgun(formData);
-                const mg = mailgun.client({ username: "api", key: API_KEY });
+                const mg = mailgun.client({ username: "api", key: process.env.MAILGUN_API_KEY });
 
-                const { status } = await mg.messages.create(DOMAIN, {
+                const { status } = await mg.messages.create(process.env.MAILGUN_DOMAIN, {
                     to: "makaryyrakam@gmail.com",
                     from: body.email,
                     subject: "Message from makarypagacz.com",
